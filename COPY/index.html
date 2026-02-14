@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulivendula Gallery</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #ddd;
+        }
+
+        .gallery {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .caption {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 20px;
+        }
+
+        /* Lightbox */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Pulivendula Photo Gallery</h1>
+    <p>Beautiful Views, Landmarks & Culture</p>
+</header>
+
+<section class="gallery">
+
+    <div class="card">
+        <img src="images/pulivendula1.jpg" onclick="openLightbox(this.src)">
+        <div class="caption">Town View</div>
+    </div>
+
+    <div class="card">
+        <img src="images/pulivendula2.jpg" onclick="openLightbox(this.src)">
+        <div class="caption">Temple Area</div>
+    </div>
+
+    <div class="card">
+        <img src="images/pulivendula3.jpg" onclick="openLightbox(this.src)">
+        <div class="caption">Streets & Local Life</div>
+    </div>
+
+    <div class="card">
+        <img src="images/pulivendula4.jpg" onclick="openLightbox(this.src)">
+        <div class="caption">Nature Around Pulivendula</div>
+    </div>
+
+    <div class="card">
+        <img src="images/pulivendula5.jpg" onclick="openLightbox(this.src)">
+        <div class="caption">Sunset View</div>
+    </div>
+
+</section>
+
+<div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
+
+<footer>
+    © 2026 Pulivendula Gallery
+</footer>
+
+<script>
+    function openLightbox(src) {
+        document.getElementById("lightbox").style.display = "flex";
+        document.getElementById("lightbox-img").src = src;
+    }
+
+    function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
