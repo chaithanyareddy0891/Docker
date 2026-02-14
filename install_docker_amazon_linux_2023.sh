@@ -1,3 +1,5 @@
 # Amazon Linux 2023
-sudo dnf install docker -y
-sudo systemctl enable docker --now
+USER=$(whoami)
+dnf install docker -y
+systemctl enable docker --now
+usermod -aG docker $USER
