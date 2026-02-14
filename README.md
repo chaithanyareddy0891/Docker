@@ -6,5 +6,6 @@
 #FROM - first instruction in most of the cases, it represents base os.
 #RUN - is used to configure image like installing packages , configure , etc..run instruction runs at the time of image building.
 #CMD - run at the time of container creation. it keeps container running.
+#LABEL - it add metadata to the image. used at the time of filter the things like images.
 
 
